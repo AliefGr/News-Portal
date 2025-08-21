@@ -31,7 +31,7 @@ const Navbar: React.FC<Props> = ({ onSearch }) => {
         <div className="flex items-center ">
           <div className="w-6/12 flex items-center gap-4">
             <Image src="/LOGO_AI.png" width={40} height={45} alt="logo" />
-            <h1 className='text-gradient font-bold text-2xl'>AI News Portal</h1>
+            <h1 className='text-gradient font-bold text-2xl'>AI News</h1>
           </div>
           {/* <div className="w-8/12">
                   <ul className="flex gap-4 font-light">
@@ -54,7 +54,7 @@ const Navbar: React.FC<Props> = ({ onSearch }) => {
                     </li>
                   </ul>
               </div> */}
-          <div className="w-6/12 flex items-center bg-background rounded-full px-4 py-2 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-1">
+          <div className="w-6/12 flex items-center bg-zinc-950 rounded-full px-4 py-2 focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-1">
             <IoSearch className="mr-3 text-gray-400" />
             <input
               value={input}

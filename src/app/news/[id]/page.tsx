@@ -4,6 +4,7 @@ import fetchNews from "@/lib/fetchNews";
 import { Article } from "@/type/type";
 import Link from "next/link";
 import { HiArrowNarrowLeft } from "react-icons/hi";
+import Image from "next/image";
 
 type Props = {
   params: { id: string };
@@ -22,9 +23,11 @@ const NewsDetailPage = async ({ params }: Props) => {
         <p className="text-white/80">Kembali</p>
       </Link>
       {article.imageUrl && (
-        <img
+        <Image
           src={article.imageUrl}
           alt={article.title}
+          width={200}
+          height={300}
           className="w-full h-96 mb-4"
         />
       )}

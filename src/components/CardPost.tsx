@@ -9,9 +9,11 @@ const CardPost = ({ imageUrl, ...article }: PropsCardPost) => {
   return (
     <div className="bg-card rounded-b-lg shadow shadow-white/10 ">
       {imageUrl ? (
-        <img
+        <Image
           src={imageUrl}
           alt={article.title}
+          width={200}
+          height={200}
           className="w-full h-50 bg-no-repeat bg-contain rounded-t-lg"
         />
       ) : (

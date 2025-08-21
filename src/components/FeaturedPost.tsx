@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // import InfoPost from "./InfoPost";
 type FeaturedPostProps = {
   image: string;
@@ -12,9 +14,10 @@ const FeaturedPost = ({ image, source, date, title, description }: FeaturedPostP
     <article>
       <div className='flex -mx-4'>
         <div className='w-8/12 px-4'>
-          <img
+          <Image
             src={image}
             alt={title}
+            fill
             className="w-full h-96 object-cover"
           />
         </div>

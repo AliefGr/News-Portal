@@ -12,10 +12,11 @@ const CardPost = ({ imageUrl, ...article }: PropsCardPost) => {
         <Image
           src={imageUrl}
           alt={article.title}
-          width={400} // lebar tetap
+          width={400}
           height={225}
           className=" rounded-t-lg"
           priority={true}
+          style={{ width: "100%", height: "auto" }}
         />
       ) : (
         <div className="w-full h-50 flex items-center justify-center bg-zinc-700 text-white/70 text-sm italic rounded-t-lg">

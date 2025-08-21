@@ -35,7 +35,7 @@ interface NYTArticle {
 export default async function fetchNews(): Promise<Article[]> {
   try {
     // Fetch dari 4 API
-    const [newsapiRes, gnewsRes, guardianRes, nytRes] = await Promise.all([
+    const [newsapiRes, guardianRes, nytRes] = await Promise.all([
       fetch(
         `https://newsapi.org/v2/everything?q=AI&apiKey=${process.env.NEWS_API_KEY}`
       ),

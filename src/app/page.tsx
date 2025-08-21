@@ -10,7 +10,7 @@ export default function Home() {
   const [filteredArticles, setFilteredArticles] = useState<Article[]>([]);
   const [displayCount, setDisplayCount] = useState(9); // Tampilkan 9 artikel pertama
   const [loading, setLoading] = useState(true);
-  const [loadingMore, setLoadingMore] = useState(false);
+  // const [loadingMore, setLoadingMore] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -46,12 +46,12 @@ export default function Home() {
     setFilteredArticles(filtered);
   };
 
-  const handleLoadMore = async () => {
-    setLoadingMore(true);
-    await new Promise((resolve) => setTimeout(resolve, 800)); // simulasi delay
-    setDisplayCount((prev) => prev + 9);
-    setLoadingMore(false);
-  };
+  // const handleLoadMore = async () => {
+  //   setLoadingMore(true);
+  //   await new Promise((resolve) => setTimeout(resolve, 800)); // simulasi delay
+  //   setDisplayCount((prev) => prev + 9);
+  //   setLoadingMore(false);
+  // };
 
   const displayedArticles = filteredArticles.slice(0, displayCount);
   // const hasMore = displayCount < filteredArticles.length;
@@ -103,20 +103,6 @@ export default function Home() {
             </div>
           )}
         </div>
-
-        {/* Load More Section */}
-        {!loading && (
-          <div>
-            {/* Skeleton saat load more */}
-            {loadingMore && (
-              <div className="flex flex-wrap -mx-4">
-                {Array.from({ length: 3 }, (_, index) => (
-                  <CardSkeleton key={`loadmore-${index}`} />
-                ))}
-              </div>
-            )}
-          </div>
-        )}
       </div>
     </div>
   );

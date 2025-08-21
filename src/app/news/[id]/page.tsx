@@ -1,20 +1,20 @@
-// app/news/[id]/page.tsx
 import React from "react";
 import fetchNews from "@/lib/fetchNews";
 import { Article } from "@/type/type";
 import Link from "next/link";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
-type Props = {
+type PageProps = {
   params: { id: string };
 };
 
-const NewsDetailPage = async ({ params }: Props) => {
+const NewsDetailPage = async ({ params }: PageProps) => {
   const articles: Article[] = await fetchNews();
   const article = articles.find((a) => a.id === params.id);
 
-  if (!article) return <div>Berita tidak ditemukan</div>;
+  if (!article) return notFound(); // Gunakan next/navigation untuk 404
 
   return (
     <div className="max-w-4xl mx-auto p-6">
@@ -22,15 +22,17 @@ const NewsDetailPage = async ({ params }: Props) => {
         <HiArrowNarrowLeft className="text-xl text-white/80" />
         <p className="text-white/80">Kembali</p>
       </Link>
+
       {article.imageUrl && (
         <Image
           src={article.imageUrl}
           alt={article.title}
-          width={200}
-          height={300}
-          className="w-full h-96 mb-4"
+          width={600}
+          height={400}
+          className="w-full h-auto mb-4 rounded-lg"
         />
       )}
+
       <h1 className="text-4xl font-bold mb-4 text-gradient">{article.title}</h1>
       <p className="text-sm text-gray-500 mb-4">
         {article.source} &bull; {new Date(article.publishedAt).toLocaleString()}

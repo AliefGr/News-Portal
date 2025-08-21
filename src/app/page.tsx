@@ -54,15 +54,15 @@ export default function Home() {
   };
 
   const displayedArticles = filteredArticles.slice(0, displayCount);
-  const hasMore = displayCount < filteredArticles.length;
+  // const hasMore = displayCount < filteredArticles.length;
 
-  console.log("Debug Info:", {
-    totalArticles: filteredArticles.length,
-    displayCount,
-    displayedCount: displayedArticles.length,
-    hasMore,
-    searchQuery,
-  });
+  // console.log("Debug Info:", {
+  //   totalArticles: filteredArticles.length,
+  //   displayCount,
+  //   displayedCount: displayedArticles.length,
+  //   hasMore,
+  //   searchQuery,
+  // });
 
   return (
     <div className="bg-background from-zinc-800 to-zinc-900 min-h-screen text-white">
@@ -91,7 +91,7 @@ export default function Home() {
               {searchQuery ? (
                 <div className="space-y-2">
                   <p className="text-white/80 text-xl">
-                    No articles found for "{searchQuery}"
+                    No articles found for &quot;{searchQuery}&quot;
                   </p>
                   <p className="text-white/60">
                     Try searching with different keywords

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Article } from '@/type/type'
 import Link from 'next/link'
-// import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { Badge } from './ui/badge'
 
@@ -19,8 +18,6 @@ const InfoPost: React.FC<Props> = ({ article }) => {
           </h1>
         </Link>
       <div className='flex items-center space-x-2 text-white/70 text-sm mt-2'>
-        {/* <div>{article.source}</div>
-        <span>&bull;</span> */}
         <div>{new Date(article.publishedAt).toLocaleString()}</div>
       </div>
         <p className='text-muted mt-3 text-sm line-clamp-3 leading-relaxed'>

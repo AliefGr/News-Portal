@@ -2,7 +2,7 @@
 import { IoSearch } from "react-icons/io5";
 import React from "react";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 type Props = {
   onSearch: (query: string) => void;
@@ -20,17 +20,17 @@ const Navbar: React.FC<Props> = ({ onSearch }) => {
     return () => clearTimeout(handler);
   }, [input, onSearch]);
 
-  const listDropdown = [
-    { text: "Internet", href: "#" },
-    { text: "Book", href: "#" },
-    { text: "Open Source", href: "#" },
-  ];
+  // const listDropdown = [
+  //   { text: "Internet", href: "#" },
+  //   { text: "Book", href: "#" },
+  //   { text: "Open Source", href: "#" },
+  // ];
   return (
     <nav className="glass sticky top-0 z-50">
       <div className="container py-3 mx-auto ">
         <div className="flex items-center ">
           <div className="w-6/12 flex items-center gap-4">
-            <Image src="/LOGO_AI.png" width={40} height={45} alt="logo" />
+            <Image src="/LOGO_AI.png" width={45} height={22} alt="logo" className="h-auto" />
             <h1 className='text-gradient font-bold text-2xl'>AI News</h1>
           </div>
           {/* <div className="w-8/12">

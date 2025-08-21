@@ -12,9 +12,10 @@ const CardPost = ({ imageUrl, ...article }: PropsCardPost) => {
         <Image
           src={imageUrl}
           alt={article.title}
-          width={200}
-          height={200}
-          className="w-full h-50 bg-no-repeat bg-contain rounded-t-lg"
+          width={400} // lebar tetap
+          height={225}
+          className=" rounded-t-lg"
+          priority={true}
         />
       ) : (
         <div className="w-full h-50 flex items-center justify-center bg-zinc-700 text-white/70 text-sm italic rounded-t-lg">

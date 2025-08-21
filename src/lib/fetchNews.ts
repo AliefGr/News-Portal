@@ -11,7 +11,7 @@ export default async function fetchNews(): Promise<Article[]> {
     ]);
 
     const newsapiData = await newsapiRes.json();
-    const gnewsData = await gnewsRes.json();
+    // const gnewsData = await gnewsRes.json();
     const guardianData = await guardianRes.json();
     const nytData = await nytRes.json();
 

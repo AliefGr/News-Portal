@@ -9,7 +9,7 @@ type Props = {
 };
 
 const Navbar: React.FC<Props> = ({ onSearch }) => {
-  const [dropdown, setDropdown] = useState(false);
+  // const [dropdown, setDropdown] = useState(false);
   const [input, setInput] = useState("");
 
   React.useEffect(() => {
